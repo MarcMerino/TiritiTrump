@@ -41,6 +41,8 @@ public class TrumpScreen implements Screen {
 		camera = new OrthographicCamera();
 		camera.setToOrtho(false, Trump.WIDTH, Trump.HEIGHT);
 
+
+
 		// Load the sprite sheet as a Texture
 		walkSheet = new Texture(Gdx.files.internal("TrumpSpritesheet.png"));
 
@@ -101,6 +103,7 @@ public class TrumpScreen implements Screen {
 		TextureRegion currentUpFrame = walkUpAnimation.getKeyFrame(stateTime, true);
 		TextureRegion currentLeftFrame = walkLeftAnimation.getKeyFrame(stateTime, true);
 		game.batch.begin();
+		game.batch.draw(new Texture(Gdx.files.internal("oval.jpg")), 0, 0);
 
 		if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
 			game.batch.draw(walkLeftAnimation.getKeyFrame(stateTime, true), trump.x, trump.y);
